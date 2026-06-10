@@ -60,7 +60,7 @@ interface ApiResponse {
 }
 
 //It allows us to reuse the server address throughout the application and makes it easier to update if the backend URL changes.
-const API_BASE = 'http://localhost:3001';
+const API_BASE = 'https://cyber-news-monitor.onrender.com';
 
 // Auto-refresh interval: 5 minutes expressed in milliseconds
 const REFRESH_INTERVAL_MS = 5 * 60 * 1000;
