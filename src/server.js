@@ -422,7 +422,7 @@ app.get('/api/threats', async (req, res) => {
 
 // Checks which feeds are reachable right now.
 app.get('/api/feed-status', async (req, res) => {
-  console.log('🔍 /api/feed-status — pinging all feeds…');
+  console.log(' /api/feed-status — pinging all feeds…');
 
   const checks = await Promise.allSettled(
     GHANA_FEEDS.map(async feed => {
@@ -480,8 +480,8 @@ app.get('/health', (_req, res) => {
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`\n🇬🇭  Ghana Cyber Monitor API — http://localhost:${PORT}`);
-  console.log(`📰  Watching ${GHANA_FEEDS.length} Ghana RSS feeds`);
-  console.log(`🔒  ${DEMO_INCIDENTS.length} demo incidents always available\n`);
+  console.log(`  Watching ${GHANA_FEEDS.length} Ghana RSS feeds`);
+  console.log(`  ${DEMO_INCIDENTS.length} demo incidents always available\n`);
   console.log('Endpoints:');
   console.log(`  GET /api/threats          → All articles (live + demo)`);
   console.log(`  GET /api/threats?days=1   → Today only`);
