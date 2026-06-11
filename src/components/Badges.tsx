@@ -3,7 +3,6 @@ import { Zap } from 'lucide-react';
 import type { ThreatLevel } from '../types';
 import { LEVEL_STYLE } from '../constants';
 
-// LevelBadge — Displays a coloured pill showing threat level
 export function LevelBadge({ level }: { level: ThreatLevel }) {
   const s = LEVEL_STYLE[level];
   return (
@@ -14,7 +13,6 @@ export function LevelBadge({ level }: { level: ThreatLevel }) {
   );
 }
 
-// PillBadge — A generic coloured pill; used as a base for DemoBadge and LiveBadge
 export function PillBadge({ className, children }: { className: string; children: React.ReactNode }) {
   return (
     <span className={`inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full ${className}`}>
@@ -31,7 +29,6 @@ export function DemoBadge() {
   );
 }
 
-// LiveBadge — Green pill with animated dot shown on real RSS feed articles
 export function LiveBadge() {
   return (
     <PillBadge className="bg-emerald-100 text-emerald-700 border border-emerald-200">

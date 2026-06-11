@@ -1,5 +1,4 @@
 import React, { useState, useMemo } from 'react';
-// useMemo — caches expensive calculations so they don't re-run needlessly.
 import {
   BarChart, Bar, XAxis, YAxis,
   Tooltip, ResponsiveContainer,
@@ -12,8 +11,6 @@ import { LevelBadge } from './Badges';
 
 export function RegionsTab({ articles }: { articles: Article[] }) {
   const [openRegion, setOpenRegion] = useState<string | null>('National');
-
-  // Group articles by their region field — runs only when `articles` changes
   const byRegion = useMemo(() => {
     const map: Record<string, Article[]> = {};
     articles.forEach(a => {
@@ -29,7 +26,6 @@ export function RegionsTab({ articles }: { articles: Article[] }) {
   return (
     <div className="space-y-5">
 
-      {/* Regional bar chart */}
       <div className="bg-white border border-gray-100 rounded-xl p-5 shadow-sm">
         <h3 className="text-sm font-semibold text-gray-800 mb-4 flex items-center gap-2">
           <MapPin className="w-4 h-4 text-emerald-500" /> Incidents by Ghana Region

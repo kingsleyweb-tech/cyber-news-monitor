@@ -1,10 +1,9 @@
 import type { ThreatLevel, ThreatCategory, GhanaRegion } from '../types';
 
-
 // It allows us to reuse the server address throughout the application
 export const API_BASE = 'https://cyber-news-monitor.onrender.com';
 
-// Auto-refresh interval: 5 minutes expressed in milliseconds
+// Auto-refresh
 export const REFRESH_INTERVAL_MS = 5 * 60 * 1000;
 
 // How many articles to show before the user clicks "View All News"
@@ -49,7 +48,6 @@ export const REGIONS: Array<GhanaRegion | 'All'> = [
   'Eastern', 'Western', 'Central', 'National', 'Upper East', 'Upper West', 'Bono',
 ];
 
-// Shared style object passed to all Recharts <Tooltip> components
 export const TOOLTIP_STYLE = {
   contentStyle: {
     background: '#fff',

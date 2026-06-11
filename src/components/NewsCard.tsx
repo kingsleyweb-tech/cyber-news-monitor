@@ -30,7 +30,6 @@ export function NewsCard({ article, index }: { article: Article; index: number }
       style={{ animation: 'fadeIn 0.3s ease both', animationDelay: `${Math.min(index, 20) * 20}ms` }}
     >
 
-      {/*Badges*/}
       <div className="flex flex-wrap gap-1 items-center">
         {article.isDemo ? <DemoBadge /> : <LiveBadge />}
         <LevelBadge level={article.level} />

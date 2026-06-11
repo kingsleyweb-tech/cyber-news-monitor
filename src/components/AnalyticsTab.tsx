@@ -9,7 +9,6 @@ import type { Article, ThreatCategory } from '../types';
 import { CATEGORY_COLORS, LEVEL_COLORS, TOOLTIP_STYLE } from '../constants';
 import { countArticlesBy } from '../utils';
 
-// It wraps each chart in a white card with a heading and icon.
 const ChartCard = ({
   title, icon: Icon, iconClass, children,
 }: {
@@ -50,7 +49,6 @@ export function AnalyticsTab({ articles }: { articles: Article[] }) {
     <div className="space-y-5">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
 
-        {/* Pie chart, category distribution */}
         <ChartCard title="Threat Category Distribution" icon={BarChart3} iconClass="text-blue-500">
           {categoryData.length > 0 ? (
             <>
@@ -66,8 +64,8 @@ export function AnalyticsTab({ articles }: { articles: Article[] }) {
                   </Pie>
                   <Tooltip {...TOOLTIP_STYLE} />
                 </PieChart>
+
               </ResponsiveContainer>
-              {/* Legend below the chart */}
               <div className="flex flex-wrap gap-x-4 gap-y-1.5 mt-3">
                 {categoryData.map(d => (
                   <span key={d.name} className="flex items-center gap-1.5 text-[11px] text-gray-500">
@@ -82,7 +80,6 @@ export function AnalyticsTab({ articles }: { articles: Article[] }) {
           )}
         </ChartCard>
 
-        {/* Bar chart — severity levels */}
         <ChartCard title="Severity Breakdown" icon={AlertTriangle} iconClass="text-orange-500">
           <ResponsiveContainer width="100%" height={230}>
             <BarChart data={levelData} barSize={44}>
@@ -97,7 +94,6 @@ export function AnalyticsTab({ articles }: { articles: Article[] }) {
         </ChartCard>
       </div>
 
-      {/* Horizontal bar chart — top sources */}
       <ChartCard title="Top Sources by Article Count" icon={Database} iconClass="text-violet-500">
         {sourceData.length > 0 ? (
           <ResponsiveContainer width="100%" height={220}>

@@ -10,7 +10,6 @@ export async function fetchThreats(): Promise<ApiResponse> {
   return response.json() as Promise<ApiResponse>;  
 }
 
-// Shape of the response from /api/feed-status
 interface FeedStatusResponse {
   feeds: FeedStatus[];
   activeCount: number;

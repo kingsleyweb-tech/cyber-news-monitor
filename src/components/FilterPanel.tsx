@@ -69,7 +69,6 @@ export function FilterPanel({
   return (
     <div className="bg-white border border-gray-100 rounded-xl p-4 shadow-sm space-y-3">
 
-      {/* Search bar */}
       <div className="relative">
         <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-300" />
         <input
@@ -77,7 +76,7 @@ export function FilterPanel({
           value={search}
           onChange={e => {
             setSearch(e.target.value);
-            setShowAllNews(false); // collapse to 12 when search changes
+            setShowAllNews(false);
           }}
           placeholder="Search articles by title or keyword…"
           className="w-full bg-gray-50 border border-gray-200 text-sm text-gray-800 placeholder-gray-400 rounded-lg pl-9 pr-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-green-300 focus:border-green-400 transition"
@@ -87,7 +86,6 @@ export function FilterPanel({
       {/* Filter dropdowns row */}
       <div className="flex flex-wrap gap-2 items-center">
 
-        {/* Date range picker */}
         <FilterSelect
           icon={Calendar}
           value={dateRange}
@@ -102,8 +100,7 @@ export function FilterPanel({
             </option>
           ))}
         </FilterSelect>
-
-        {/* Category / Level / Region dropdowns */}
+        
         {([
           { opts: CATEGORIES, value: category, set: (v: string) => { setCategory(v as ThreatCategory | 'All'); setShowAllNews(false); }, label: 'Categories' },
           { opts: LEVELS,     value: level,    set: (v: string) => { setLevel(v as ThreatLevel | 'All');       setShowAllNews(false); }, label: 'Levels'     },

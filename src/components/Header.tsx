@@ -2,7 +2,6 @@ import React from 'react';
 import { Shield, RefreshCw, Activity } from 'lucide-react';
 
 interface HeaderProps {
-  // Stats about articles — used to show the critical alert pill
   stats: { critical: number };
   loading: boolean;
   meta: { liveCount: number; demoCount: number; fetchTimeMs: number } | null;
@@ -15,7 +14,6 @@ export function Header({ stats, loading, meta, fetchArticles }: HeaderProps) {
     <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
       <div className="max-w-6xl mx-auto px-4 h-16 flex items-center gap-3">
 
-        {/* Logo */}
         <div className="w-9 h-9 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-sm">
           <Shield className="w-5 h-5 text-white" />
         </div>
@@ -25,7 +23,6 @@ export function Header({ stats, loading, meta, fetchArticles }: HeaderProps) {
           <p className="text-[10px] text-gray-400 mt-0.5 uppercase tracking-widest">National Cybersecurity Dashboard</p>
         </div>
 
-        {/* Critical alert pill — only shows when there are critical articles */}
         {stats.critical > 0 && !loading && (
           <div className="hidden md:flex items-center gap-1.5 ml-3 bg-red-50 border border-red-200 rounded-lg px-2.5 py-1">
             <span className="relative flex h-2 w-2">
@@ -36,7 +33,6 @@ export function Header({ stats, loading, meta, fetchArticles }: HeaderProps) {
           </div>
         )}
 
-        {/* Live feed stats — only visible on large screens */}
         {meta && !loading && (
           <div className="hidden lg:flex items-center gap-1.5 text-[11px] text-gray-400 bg-gray-50 border border-gray-100 rounded-lg px-2.5 py-1 ml-1">
             <Activity className="w-3 h-3 text-green-500" />

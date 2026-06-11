@@ -16,7 +16,7 @@ export function FeedHealthTab({ articlesBySource }: { articlesBySource: Record<s
     fetchFeedStatus()
       .then(data => { setFeeds(data); setLoading(false); })
       .catch(e => { setError(e.message); setLoading(false); });
-  }, []); // ← empty array = run once on mount
+  }, []); 
 
   const activeCount  = feeds.filter(f => f.status === 'Active').length;
   const offlineCount = feeds.filter(f => f.status !== 'Active').length;
@@ -30,7 +30,6 @@ export function FeedHealthTab({ articlesBySource }: { articlesBySource: Record<s
   return (
     <div className="space-y-5">
 
-      {/* Summary counts — online / offline / total */}
       {!loading && !error && (
         <div className="grid grid-cols-3 gap-3">
           {[
@@ -46,7 +45,6 @@ export function FeedHealthTab({ articlesBySource }: { articlesBySource: Record<s
         </div>
       )}
 
-      {/* Feed list */}
       <div className="bg-white border border-gray-100 rounded-xl shadow-sm overflow-hidden">
         <div className="px-5 py-3.5 border-b border-gray-100 flex items-center gap-2">
           <Radio className="w-4 h-4 text-blue-500" />
